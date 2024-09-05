@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Song</title>
+</head>
+<body>
+    <h1>Click the Link to Play the Song</h1>
+    <!-- Link to play the song -->
+    <a href="#" id="playLink">Play Happy Teacher Ji</a>
+
+    <!-- Audio element to play the song -->
+    <audio id="song" src="path_to_your_song/happy_teacher_ji.mp3"></audio>
+
+    <script>
+        document.getElementById('playLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            var audio = document.getElementById('song');
+            audio.play(); // Play the song
+        });
+    </script>
+</body>
+</html>
