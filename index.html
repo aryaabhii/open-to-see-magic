@@ -3,21 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Song</title>
+    <title>Magic</title>
+    <style>
+        /* Hide the celebration content initially */
+        #celebrationContent {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #celebrationImage {
+            width: 300px;
+            height: auto;
+        }
+        
+        #message {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff6347; /* Tomato color */
+        }
+        .text {
+            margin-top:  100px;
+            font-size: 30px;
+            
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+        }
+        button:hover { 
+            background: #777777;
+        }
+    </style>
 </head>
 <body>
-    <h1>Click the Link to Play the Song</h1>
-    <!-- Link to play the song -->
-    <a href="#" id="playLink">Play Happy Teacher Ji</a>
+
+    <!-- Link to trigger the celebration -->
+    <center class="text" id="celebrateLink">
+        <button>
+            <a href="#" id="">Click to see magic</a>
+        </button>
+    </center>
+
+    <!-- Hidden content that will show up after clicking the link -->
+    <div id="celebrationContent">
+        <img id="celebrationImage" src="./assets/img/img.gif" alt="Celebration Image">
+        <p id="message">Congratulations! You are awesome!</p>
+    </div>
 
     <!-- Audio element to play the song -->
-    <audio id="song" src="path_to_your_song/happy_teacher_ji.mp3"></audio>
+    <audio id="song" src="./assets/audio/my-music.mp3"></audio>
 
     <script>
-        document.getElementById('playLink').addEventListener('click', function(event) {
+
+        document.getElementById('celebrateLink').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default link behavior
+            
+             // Hide the link
+             this.style.display = 'none';
+
+            // Show the celebration content
+            document.getElementById('celebrationContent').style.display = 'block';
+
+            // Play the song
             var audio = document.getElementById('song');
-            audio.play(); // Play the song
+            audio.play();
         });
     </script>
 </body>
